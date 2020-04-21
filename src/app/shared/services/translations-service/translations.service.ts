@@ -3,10 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TranslationsService {
-
   constructor(private translateService: TranslateService) {
     translateService.addLangs(environment.availableLanguages);
     translateService.setDefaultLang(environment.availableLanguages[0]);

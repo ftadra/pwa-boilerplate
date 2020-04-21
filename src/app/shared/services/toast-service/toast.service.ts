@@ -1,23 +1,22 @@
-import { Injectable } from "@angular/core";
-import { ToastController } from "@ionic/angular";
-import { toastConfig } from "./toast.config";
-import { TranslationsService } from "../translations-service/translations.service";
+import { Injectable } from '@angular/core';
+import { ToastController } from '@ionic/angular';
+import { toastConfig } from './toast.config';
 
 interface ToastExtraConfig {
   header?: string;
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class ToastService {
   constructor(private toastController: ToastController) {}
 
   async success(message: string, extraConfig: ToastExtraConfig = {}) {
     const toast = await this.toastController.create({
-      header: extraConfig.header || "",
+      header: extraConfig.header || '',
       message,
-      color: "success",
+      color: 'success',
       ...toastConfig,
       ...extraConfig,
     });
@@ -26,9 +25,9 @@ export class ToastService {
 
   async error(message: string, extraConfig: ToastExtraConfig = {}) {
     const toast = await this.toastController.create({
-      header: extraConfig.header || "",
+      header: extraConfig.header || '',
       message,
-      color: "danger",
+      color: 'danger',
       ...toastConfig,
       ...extraConfig,
     });
@@ -37,9 +36,9 @@ export class ToastService {
 
   async warning(message: string, extraConfig: ToastExtraConfig = {}) {
     const toast = await this.toastController.create({
-      header: extraConfig.header || "",
+      header: extraConfig.header || '',
       message,
-      color: "warning",
+      color: 'warning',
       ...toastConfig,
       ...extraConfig,
     });
